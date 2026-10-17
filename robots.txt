@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jdfb22bkrt-beep.github.io/Strade-genova-/sitemap.xml

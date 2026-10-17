@@ -36,7 +36,7 @@ const SOURCES = {
   bassa: ['Comune · Regolamento Municipio III', 'https://smart.comune.genova.it/system/files/regolamenti/Regolamento-Funzionamento-Organi-Municipali.pdf']
 };
 const MUNICIPIOS = ['Centro Est', 'Centro Ovest', 'Bassa Val Bisagno', 'Media Val Bisagno', 'Val Polcevera', 'Medio Ponente', 'Ponente', 'Medio Levante', 'Levante'];
-const LEVELS = ['Scopri Genova', 'Conosci Genova', 'Esperto di Genova'];
+const LEVELS = ['Facile — Scopri Genova', 'Medio — Conosci Genova', 'Difficile — Esperto di Genova'];
 const questionRows = [
   // id, livello, municipio, domanda, corretta e tre distrattori, spiegazione, fonte
   ['rolli-ospitalita',1,1,'A che cosa servivano i Rolli della Repubblica?',['A elencare dimore per ospitare visitatori illustri','A registrare soltanto le navi mercantili','A censire le torri difensive','A stabilire i turni dei pescatori'],'Le famiglie delle dimore iscritte partecipavano all’ospitalità pubblica della Repubblica.','rolli'],

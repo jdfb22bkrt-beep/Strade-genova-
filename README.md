@@ -1,17 +1,9 @@
-# Genova da Scoprire
+# Genova da scoprire
 
-Sito statico indipendente dedicato a Genova: luoghi, storia e quiz.
+Versione turistica con Home semplice, nove municipi, quiz separato e statistiche locali.
 
-Aprire index.html per una prova locale. Non richiede compilazione o servizi a pagamento.
+Contenuti e attribuzioni fotografiche sono consultabili in informazioni.html. Le fotografie adattate mantengono le rispettive licenze.
 
-## Fotografia
+Le misure stradali non verificate non vengono stimate. Questa prima edizione contiene 54 domande, 25 schede e sette schede di collegamenti stradali.
 
-Boccadasse, di Alexdechi: https://commons.wikimedia.org/wiki/File:Boccadasse.jpg. Licenza CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/. Ridimensionata a 1280 × 577 e convertita in WebP senza EXIF; l’adattamento fotografico mantiene la stessa licenza. Crediti e informazioni tecniche in informazioni.html.
-
-## Dati
-
-Progressi conservati nel browser; nessun account o analytics nel codice. Non aggiungere al repository esportazioni dei progressi, dati personali o credenziali. La lista consentita in .gitignore riduce le aggiunte accidentali.
-
-## GitHub Pages
-
-Questa cartella contiene i file del sito. Non include workflow di pubblicazione automatica né un dominio personalizzato. L’attivazione di Pages deve essere una scelta esplicita del proprietario.
+Il sito usa solo file statici. sitemap.xml e canonical sono predisposti per l’indirizzo corrente; nessun dominio personalizzato è configurato.

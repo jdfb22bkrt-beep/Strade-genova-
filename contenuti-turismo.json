@@ -1,0 +1,603 @@
+{
+  "areas": [
+    {
+      "id": 1,
+      "slug": "centro-est",
+      "name": "Centro Est",
+      "quarters": "Prè, Molo, Maddalena, Portoria, San Vincenzo, Carignano, Castelletto, Oregina e Lagaccio",
+      "intro": "Tra palazzi, caruggi e porto: qui la storia della città si legge a ogni passo.",
+      "photo": "centro",
+      "order": 1
+    },
+    {
+      "id": 2,
+      "slug": "centro-ovest",
+      "name": "Centro Ovest",
+      "quarters": "Sampierdarena e San Teodoro",
+      "intro": "Ville aristocratiche e memoria del porto, a ponente del centro.",
+      "photo": "centro-ovest",
+      "order": 2
+    },
+    {
+      "id": 8,
+      "slug": "medio-levante",
+      "name": "Medio Levante",
+      "quarters": "Foce, Albaro e San Martino",
+      "intro": "Passeggiate sul mare, borghi e architetture tra la Foce e Albaro.",
+      "photo": "boccadasse",
+      "order": 3
+    },
+    {
+      "id": 9,
+      "slug": "levante",
+      "name": "Levante",
+      "quarters": "Sturla, Quarto, Quinto, Nervi, Borgoratti, Apparizione, Bavari e Sant’Ilario",
+      "intro": "La costa, le creuze e le colline: Genova incontra la Riviera.",
+      "photo": "levante",
+      "order": 4
+    },
+    {
+      "id": 6,
+      "slug": "medio-ponente",
+      "name": "Medio Ponente",
+      "quarters": "Sestri Ponente e Cornigliano",
+      "intro": "Il Ponente delle ville e dei giardini, accanto alla storia industriale.",
+      "photo": "medio-ponente",
+      "order": 5
+    },
+    {
+      "id": 7,
+      "slug": "ponente",
+      "name": "Ponente",
+      "quarters": "Pegli, Prà, Voltri, Multedo, Palmaro e Crevari",
+      "intro": "Parchi storici e paesaggi marini all’estremità occidentale della città.",
+      "photo": "ponente",
+      "order": 6
+    },
+    {
+      "id": 5,
+      "slug": "val-polcevera",
+      "name": "Val Polcevera",
+      "quarters": "Rivarolo, Certosa, Bolzaneto, Pontedecimo e San Quirico",
+      "intro": "Una valle di passaggio e di incontri, con un patrimonio da riscoprire.",
+      "photo": "val-polcevera",
+      "order": 7
+    },
+    {
+      "id": 4,
+      "slug": "media-val-bisagno",
+      "name": "Media Val Bisagno",
+      "quarters": "Staglieno, Molassana, Struppa, San Gottardo, Sant’Eusebio e Montesignano",
+      "intro": "Chiese medievali e paesaggi di valle sulle tracce dell’acqua.",
+      "photo": "media-val-bisagno",
+      "order": 8
+    },
+    {
+      "id": 3,
+      "slug": "bassa-val-bisagno",
+      "name": "Bassa Val Bisagno",
+      "quarters": "Marassi, San Fruttuoso e Quezzi",
+      "intro": "Ville, quartieri e percorsi tra la città compatta e le alture.",
+      "photo": "bassa-val-bisagno",
+      "order": 9
+    }
+  ],
+  "places": [
+    {
+      "id": 0,
+      "name": "Piazza De Ferrari",
+      "area": "Portoria",
+      "municipio": 1,
+      "history": "Il centro della città moderna si raccoglie intorno alla grande fontana in bronzo del 1936.",
+      "curiosity": "La piazza è dedicata al duca di Galliera Raffaele De Ferrari.",
+      "source": "ferrari",
+      "category": "centro",
+      "photo": null,
+      "photoKey": "centro"
+    },
+    {
+      "id": 1,
+      "name": "Via Garibaldi",
+      "area": "Maddalena",
+      "municipio": 1,
+      "history": "La cinquecentesca Strada Nuova racconta l’ambizione delle famiglie aristocratiche genovesi.",
+      "curiosity": "I palazzi erano anche strumenti di rappresentanza della Repubblica.",
+      "source": "tesori",
+      "category": "centro",
+      "photo": null,
+      "photoKey": "garibaldi"
+    },
+    {
+      "id": 2,
+      "name": "Palazzi dei Rolli",
+      "area": "Centro storico",
+      "municipio": 1,
+      "history": "Un sistema di dimore private sosteneva l’ospitalità pubblica degli ospiti illustri.",
+      "curiosity": "Il sito UNESCO è stato iscritto nel 2006.",
+      "source": "rolli",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 3,
+      "name": "Via XX Settembre (Via 20 Settembre)",
+      "area": "San Vincenzo e Portoria",
+      "municipio": 1,
+      "history": "Portici e architetture tra Ottocento e Novecento accompagnano la discesa verso Brignole.",
+      "curiosity": "Il Ponte Monumentale permette di leggere la città su due livelli.",
+      "source": "ponte",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 4,
+      "name": "Via Balbi",
+      "area": "Prè",
+      "municipio": 1,
+      "history": "La via monumentale seicentesca ospita Palazzo Reale, nato come dimora della famiglia Balbi.",
+      "curiosity": "La residenza passò ai Durazzo e poi ai Savoia.",
+      "source": "balbi",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 5,
+      "name": "Via Cairoli",
+      "area": "Centro storico",
+      "municipio": 1,
+      "history": "La Strada Nuovissima prosegue il percorso monumentale delle Strade Nuove.",
+      "curiosity": "Piazza della Meridiana la raccorda a via Garibaldi.",
+      "source": "tesori",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 6,
+      "name": "Piazza Matteotti",
+      "area": "Molo",
+      "municipio": 1,
+      "history": "Uno spazio tra città antica e centro moderno, su cui si apre Palazzo Ducale.",
+      "curiosity": "L’ingresso principale del palazzo è qui, vicino a De Ferrari.",
+      "source": "ferrari",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 7,
+      "name": "Cattedrale di San Lorenzo",
+      "area": "Molo",
+      "municipio": 1,
+      "history": "La cattedrale è una tappa centrale per leggere la storia religiosa e artistica genovese.",
+      "curiosity": "La via omonima accompagna la discesa verso il Porto Antico.",
+      "source": "guida",
+      "category": "centro",
+      "photo": null,
+      "photoKey": "sanlorenzo"
+    },
+    {
+      "id": 8,
+      "name": "Palazzo San Giorgio",
+      "area": "Molo",
+      "municipio": 1,
+      "history": "Il palazzo si affaccia sull’antica area portuale, tra la città e il mare.",
+      "curiosity": "È una delle tappe dell’itinerario ufficiale tra il porto e le Strade Nuove.",
+      "source": "guida",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 9,
+      "name": "Porto Antico",
+      "area": "Molo",
+      "municipio": 1,
+      "history": "La riqualificazione per le celebrazioni colombiane del 1992 ha restituito alla città la vecchia area portuale.",
+      "curiosity": "Il progetto è dello studio Renzo Piano Building Workshop.",
+      "source": "piano",
+      "category": "mare",
+      "photo": null,
+      "photoKey": "porto"
+    },
+    {
+      "id": 10,
+      "name": "Magazzini del Cotone",
+      "area": "Molo",
+      "municipio": 1,
+      "history": "Il grande complesso lungo il Molo conserva nel nome la memoria delle attività portuali.",
+      "curiosity": "Dalla punta del Molo si osservano il bacino e il profilo della città.",
+      "source": "guida",
+      "category": "mare",
+      "photo": null
+    },
+    {
+      "id": 11,
+      "name": "Spianata Castelletto",
+      "area": "Castelletto",
+      "municipio": 1,
+      "history": "Il belvedere domina i tetti del centro storico e il porto.",
+      "curiosity": "Fino al 1849 questo spazio era occupato da una fortezza.",
+      "source": "castelletto",
+      "category": "panorama",
+      "photo": null,
+      "photoKey": "panorama"
+    },
+    {
+      "id": 12,
+      "name": "Boccadasse",
+      "area": "Albaro",
+      "municipio": 8,
+      "history": "L’antico borgo marinaro si raccoglie intorno alla piccola spiaggia, tra corso Italia e Capo Santa Chiara.",
+      "curiosity": "Le creuze oltre il capo conducono verso Vernazzola.",
+      "source": "boccadasse",
+      "category": "mare",
+      "photo": "assets/boccadasse.webp",
+      "photoKey": "boccadasse"
+    },
+    {
+      "id": 13,
+      "name": "Centro storico e caruggi",
+      "area": "Molo, Maddalena e Prè",
+      "municipio": 1,
+      "history": "La città antica si esplora attraverso vicoli, piazze e percorsi pedonali.",
+      "curiosity": "Basta allontanarsi dalle vie principali per cambiare prospettiva sui palazzi.",
+      "source": "guida",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 14,
+      "name": "Nervi e passeggiata Anita Garibaldi",
+      "area": "Nervi",
+      "municipio": 9,
+      "history": "Una passeggiata sulla scogliera corre accanto ai giardini delle ville storiche.",
+      "curiosity": "I parchi collegano le proprietà Gropallo, Saluzzo Serra e Grimaldi Fassio.",
+      "source": "nervi",
+      "category": "mare",
+      "photo": null,
+      "photoKey": "levante",
+      "photoPending": true
+    },
+    {
+      "id": 15,
+      "name": "Villa Imperiale Scassi",
+      "area": "Sampierdarena",
+      "municipio": 2,
+      "history": "Una villa cinquecentesca testimonia il passato delle residenze aristocratiche di Sampierdarena.",
+      "curiosity": "Era chiamata «La Bellezza» per il suo giardino.",
+      "source": "scassi",
+      "category": "centro",
+      "photo": null,
+      "photoKey": "centro-ovest"
+    },
+    {
+      "id": 16,
+      "name": "Villa Imperiale Cattaneo",
+      "area": "San Fruttuoso",
+      "municipio": 3,
+      "history": "Una residenza intorno al 1500 con un parco disposto su più livelli nell’area di Terralba.",
+      "curiosity": "Ospita la Biblioteca Lercari.",
+      "source": "lercari",
+      "category": "panorama",
+      "photo": null,
+      "photoKey": "bassa-val-bisagno"
+    },
+    {
+      "id": 17,
+      "name": "San Siro di Struppa",
+      "area": "Struppa",
+      "municipio": 4,
+      "history": "Una chiesa medievale sulle alture della Val Bisagno, inserita negli itinerari culturali del Municipio IV.",
+      "curiosity": "L’itinerario delle chiese incontra anche il ponte canale del Rio Torbido.",
+      "source": "struppa",
+      "category": "panorama",
+      "photo": null,
+      "photoKey": "media-val-bisagno"
+    },
+    {
+      "id": 18,
+      "name": "Certosa di San Bartolomeo",
+      "area": "Certosa / Rivarolo",
+      "municipio": 5,
+      "history": "Il complesso monastico fu fondato nel 1297 e rinnovato nel Cinquecento.",
+      "curiosity": "Nel chiostro si conserva un rissêu, un mosaico di ciottoli.",
+      "source": "certosa",
+      "category": "centro",
+      "photo": null,
+      "photoKey": "val-polcevera",
+      "photoPending": true
+    },
+    {
+      "id": 19,
+      "name": "Villa Rossi Martini",
+      "area": "Sestri Ponente",
+      "municipio": 6,
+      "history": "Una villa di origine seicentesca circondata da un parco storico all’inglese.",
+      "curiosity": "Il disegno del parco è del paesaggista Giuseppe Rovelli.",
+      "source": "rossi",
+      "category": "panorama",
+      "photo": null,
+      "photoKey": "medio-ponente"
+    },
+    {
+      "id": 20,
+      "name": "Villa Gentile Bickley",
+      "area": "Cornigliano",
+      "municipio": 6,
+      "history": "Una delle ville che ricordano la storia residenziale di Cornigliano.",
+      "curiosity": "È sede della biblioteca pubblica Guerrazzi.",
+      "source": "ville",
+      "category": "centro",
+      "photo": null
+    },
+    {
+      "id": 21,
+      "name": "Villa Pallavicini e Museo di Archeologia Ligure",
+      "area": "Pegli",
+      "municipio": 7,
+      "history": "La villa ospita reperti che raccontano il passato della Liguria, dalla preistoria al mondo romano.",
+      "curiosity": "Tra i reperti figurano la Tavola di Polcevera e le sepolture delle Arene Candide.",
+      "source": "archeologia",
+      "category": "panorama",
+      "photo": null
+    },
+    {
+      "id": 22,
+      "name": "Villa Duchessa di Galliera",
+      "area": "Voltri",
+      "municipio": 7,
+      "history": "Un parco storico sulle alture del Ponente, legato alla famiglia Brignole Sale.",
+      "curiosity": "È uno dei grandi complessi verdi storici valorizzati dal Comune.",
+      "source": "ponente",
+      "category": "panorama",
+      "photo": null,
+      "photoKey": "ponente"
+    },
+    {
+      "id": 23,
+      "name": "Corso Italia",
+      "area": "Foce e Albaro",
+      "municipio": 8,
+      "history": "La passeggiata novecentesca collega la zona della Foce con Boccadasse.",
+      "curiosity": "Lungo il litorale si incontra l’abbazia medievale di San Giuliano.",
+      "source": "boccadasse",
+      "category": "mare",
+      "photo": null
+    },
+    {
+      "id": 24,
+      "name": "Palazzo Ducale",
+      "area": "Molo / Piazza Matteotti",
+      "municipio": 1,
+      "history": "La sede del potere della Repubblica è oggi uno dei grandi luoghi culturali di Genova. Il nucleo del palazzo si formò nel Medioevo, accorpando edifici preesistenti.",
+      "curiosity": "Il nome Ducale si affermò con il primo doge, Simon Boccanegra, nel 1339. La Torre Grimaldina conserva la memoria del passato del palazzo.",
+      "source": "ducale",
+      "photoKey": "centro",
+      "photoCaption": "Palazzo Ducale visto da piazza De Ferrari."
+    }
+  ],
+  "roads": [
+    {
+      "id": "garibaldi",
+      "municipio": 1,
+      "name": "Via Garibaldi",
+      "area": "Maddalena",
+      "start": "Piazza delle Fontane Marose",
+      "end": "Piazza della Meridiana",
+      "length": null,
+      "source": "garibaldiPercorso",
+      "story": "La Strada Nuova cinquecentesca è una strada di rappresentanza, fiancheggiata dalle dimore delle famiglie genovesi. Vi si trovano Palazzo Rosso, Palazzo Bianco e Palazzo Tursi."
+    },
+    {
+      "id": "xx-settembre",
+      "municipio": 1,
+      "name": "Via XX Settembre",
+      "area": "Portoria e San Vincenzo",
+      "start": "Piazza De Ferrari",
+      "end": "Zona di via Fiume e via Cadorna, verso Brignole",
+      "length": "Circa 1 km",
+      "source": "strada20",
+      "note": "Il riferimento finale indica la zona di arrivo del percorso turistico, non una misura catastale del tracciato.",
+      "story": "Portici e palazzi tra Ottocento e Novecento raccontano la trasformazione della città. Il Ponte Monumentale sovrasta la via; il Mercato Orientale è accessibile lungo il percorso."
+    },
+    {
+      "id": "balbi",
+      "municipio": 1,
+      "name": "Via Balbi",
+      "area": "Prè",
+      "start": "Piazza della Nunziata",
+      "end": "Piazza Acquaverde",
+      "length": null,
+      "source": "balbiPercorso",
+      "story": "La strada seicentesca collega il centro storico alla zona della stazione Principe. I suoi palazzi ospitano istituzioni culturali e universitarie."
+    },
+    {
+      "id": "cairoli",
+      "municipio": 1,
+      "name": "Via Cairoli",
+      "area": "Maddalena",
+      "start": "Piazza della Meridiana",
+      "end": "Largo della Zecca",
+      "length": null,
+      "source": "tesori",
+      "story": "La Strada Nuovissima prosegue l’itinerario monumentale da via Garibaldi verso la zona di via Balbi."
+    },
+    {
+      "id": "italia",
+      "municipio": 8,
+      "name": "Corso Italia",
+      "area": "Foce e Albaro",
+      "start": "Zona di piazza Rossetti",
+      "end": "Boccadasse, presso la chiesa di Sant’Antonio",
+      "length": "Circa 2,5 km",
+      "source": "boccadasse",
+      "story": "La passeggiata novecentesca accompagna il litorale tra stabilimenti balneari, architetture e l’abbazia di San Giuliano."
+    },
+    {
+      "id": "siffredi",
+      "municipio": 6,
+      "name": "Via Angelo Siffredi",
+      "area": "Cornigliano / Sestri Ponente",
+      "start": "Nodo della stazione di Cornigliano",
+      "end": "Zona di via Albareto",
+      "length": null,
+      "source": "siffredi",
+      "story": "Un collegamento importante nella viabilità del Medio Ponente. I riferimenti indicano il collegamento descritto dalla fonte, non un itinerario di guida."
+    },
+    {
+      "id": "montaldo",
+      "municipio": 4,
+      "name": "Via Leonardo Montaldo",
+      "area": "Collegamento dalla Val Bisagno a Manin",
+      "start": "Nodo di via Bobbio",
+      "end": "Piazza Manin",
+      "length": null,
+      "source": "montaldo",
+      "story": "La salita mette in relazione il fondovalle con le alture verso Castelletto. Il collegamento è documentato nei percorsi AMT."
+    }
+  ],
+  "sources": {
+    "guida": [
+      "Comune · Genova in tasca",
+      "https://www.visitgenoa.it/sites/default/files/2023-08/Genova%20in%20tasca_0.pdf"
+    ],
+    "tesori": [
+      "Comune · Genova e i suoi tesori",
+      "https://www.visitgenoa.it/sites/default/files/2023-08/Genova%20e%20i%20suoi%20tesori_2.pdf"
+    ],
+    "municipi": [
+      "Comune · Municipi e quartieri",
+      "https://trovailtuoseggio.comune.genova.it/municipi_pt.asp"
+    ],
+    "grande": [
+      "Comune · La Grande Genova del 1926",
+      "https://smart.comune.genova.it/notizie/i-confini-della-grande-genova-del-1926-nel-geoportale-del-comune"
+    ],
+    "rolli": [
+      "UNESCO · Iscrizione del 2006",
+      "https://whc.unesco.org/en/decisions/1009/"
+    ],
+    "rolli42": [
+      "Sito dei Rolli · I 42 palazzi",
+      "https://www.rolliestradenuove.it/en/rollo/"
+    ],
+    "ferrari": [
+      "Visit Genoa · Piazza De Ferrari",
+      "https://www.visitgenoa.it/en/piazza-de-ferrari"
+    ],
+    "fontana": [
+      "Palazzo Ducale · La fontana",
+      "https://www1.palazzoducale.genova.it/la-fontana-di-piazza-de-ferrari/"
+    ],
+    "ponte": [
+      "Visit Genoa · Ponte Monumentale",
+      "https://www.visitgenoa.it/it/ponte-monumentale"
+    ],
+    "balbi": [
+      "Visit Genoa · Palazzo Reale",
+      "https://www.visitgenoa.it/it/palazzo-reale_"
+    ],
+    "porto": [
+      "Porto Antico · La storia",
+      "https://portoantico.it/la-societa/la-storia/"
+    ],
+    "piano": [
+      "Ministero della Cultura · Porto Antico",
+      "https://censimentoarchitetturecontemporanee.cultura.gov.it/scheda-opera?id=4321"
+    ],
+    "boccadasse": [
+      "Visit Genoa · Boccadasse e Corso Italia",
+      "https://www.visitgenoa.it/it/boccadasse-e-corso-italia1"
+    ],
+    "castelletto": [
+      "Visit Genoa · Spianata Castelletto",
+      "https://www.visitgenoa.it/en/node/21752"
+    ],
+    "ascensore": [
+      "AMT · Castelletto Levante",
+      "https://www.amt.genova.it/amt/trasporto-multimodale/ascensori/lascensore-castelletto-levante-un-viaggio-nel900/"
+    ],
+    "imperiale": [
+      "Visit Genoa · Villa Imperiale e Terralba",
+      "https://www.visitgenoa.it/en/node/15367"
+    ],
+    "lercari": [
+      "Regione Liguria · Villa Cattaneo Imperiale",
+      "https://www.regione.liguria.it/homepage-attivita-istituzionale/archivi-biblioteche/archivio-storico/archivio-mostra/genova-citta-ville/villa-imperiale.html"
+    ],
+    "scassi": [
+      "Visit Genoa · Le ville, Rolli Days 2019",
+      "https://www.visitgenoa.it/es/node/1864"
+    ],
+    "ville": [
+      "Visit Genoa · Ville di Cornigliano",
+      "https://www.visitgenoa.it/en/node/25679"
+    ],
+    "rossi": [
+      "Visit Genoa · Villa Rossi Martini",
+      "https://www.visitgenoa.it/it/villa-rossi-martini"
+    ],
+    "archeologia": [
+      "Visit Genoa · Museo di Archeologia Ligure",
+      "https://www.visitgenoa.it/it/museo-di-archeologia-ligure"
+    ],
+    "ponente": [
+      "Comune · Parchi storici del Ponente",
+      "https://smart.comune.genova.it/comunicati-stampa-articoli/verde-urbano-alberta-campitelli-visita-ai-parchi-storici-del-ponente"
+    ],
+    "certosa": [
+      "Visit Genoa · Certosa, programma Rolli 2019",
+      "https://www.visitgenoa.it/sites/default/files/2023-10/19%2520-%2520Rolli%2520Maggio%25202019%2520Programma%2520A4.pdf"
+    ],
+    "struppa": [
+      "Municipio IV · Chiese medievali di Struppa",
+      "https://www.visitgenoa.it/sites/default/files/2024-11/Locandina%20ValBisagno%20Medievale%204.pdf"
+    ],
+    "nervi": [
+      "Regione Liguria · Genova moderna",
+      "https://www.regione.liguria.it/components/com_publiccompetitions/includes/download.php?id=12480%3Agenova-moderna-italiano.pdf"
+    ],
+    "rete": [
+      "AMT · Rete e sequenza delle fermate",
+      "https://www.amt.genova.it/amt/trasporto-multimodale/pianifica-il-viaggio/"
+    ],
+    "montaldo": [
+      "AMT · Collegamento Manin–Bobbio",
+      "https://www.amt.genova.it/amt/servizio-sostitutivo-ferrovia-genova-casella-nuovo-capolinea-in-largo-giardino/"
+    ],
+    "caffaro": [
+      "Visit Genoa · Villa Gruber–Castello d’Albertis",
+      "https://www.visitgenoa.it/en/node/1871"
+    ],
+    "siffredi": [
+      "Autorità portuale · Cavalcavia Siffredi",
+      "https://www.portsofgenoa.com/it/magazine/news/nuovo-cavalcavia-siffredi-iniziano-operazioni-varo.html"
+    ],
+    "posalunga": [
+      "AMT · Percorsi storici 2008 (toponomastica)",
+      "https://www.amt.genova.it/amt/area-stampa/comunicati-stampa/testo-comunicato/?numcom=%2FCS%2F2008%2F0296.htm"
+    ],
+    "medio": [
+      "Comune · Foce, Albaro e San Martino",
+      "https://smart.comune.genova.it/articoli/sfalci-ordinari-agli-aggiornamenti-sul-sito-del-comune"
+    ],
+    "bassa": [
+      "Comune · Regolamento Municipio III",
+      "https://smart.comune.genova.it/system/files/regolamenti/Regolamento-Funzionamento-Organi-Municipali.pdf"
+    ],
+    "ducale": [
+      "Palazzo Ducale · Storia del palazzo",
+      "https://palazzoducale.genova.it/il-palazzo/la-storia/"
+    ],
+    "strada20": [
+      "Visit Genoa · Via XX Settembre",
+      "https://www.visitgenoa.it/it/xx-settembre"
+    ],
+    "balbiPercorso": [
+      "Università di Genova · Via Balbi",
+      "https://fosca.unige.it/Via%20Balbi"
+    ],
+    "garibaldiPercorso": [
+      "Comune · Via Garibaldi tra Fontane Marose e Meridiana",
+      "https://smart.comune.genova.it/comunicati-stampa-articoli/piano-caruggi-inaugurato-il-nuovo-intervento-di-illuminazione-garibaldi"
+    ]
+  }
+}
