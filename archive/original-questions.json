@@ -1,0 +1,112 @@
+[
+  {
+    "id": "corso-europa",
+    "question": "Percorrendo corso Europa da San Martino verso Nervi, quale successione di quartieri rispetta l’ordine da ponente a levante?",
+    "answers": [
+      "Sturla → Quinto al Mare → Quarto dei Mille → Nervi",
+      "Sturla → Quarto dei Mille → Quinto al Mare → Nervi",
+      "Quarto dei Mille → Sturla → Quinto al Mare → Nervi"
+    ],
+    "correct": 1,
+    "explanation": "Da San Martino, corso Europa prosegue verso Sturla, Quarto dei Mille, Quinto al Mare e Nervi."
+  },
+  {
+    "id": "siffredi",
+    "question": "Quale strada costituisce il raccordo tra la zona della stazione di Cornigliano e la direttrice verso Sestri Ponente?",
+    "answers": [
+      "Via Angelo Siffredi",
+      "Via Cornigliano",
+      "Via Sestri"
+    ],
+    "correct": 0,
+    "explanation": "Via Angelo Siffredi parte dal nodo della stazione di Cornigliano e prosegue verso Sestri Ponente. Via Sestri è invece nel centro di Sestri."
+  },
+  {
+    "id": "canevari",
+    "question": "Quale strada, sulla destra idrografica del Bisagno, collega la zona di Borgo Incrociati e Brignole con Marassi?",
+    "answers": [
+      "Corso Sardegna",
+      "Corso Alessandro De Stefanis",
+      "Via Canevari"
+    ],
+    "correct": 2,
+    "explanation": "Via Canevari collega Borgo Incrociati e la zona di Brignole con Marassi, sulla sponda destra del Bisagno, guardando verso la foce."
+  },
+  {
+    "id": "bobbio",
+    "question": "Via Bobbio collega Marassi a Staglieno: su quale lato del Bisagno si sviluppa questa direttrice?",
+    "answers": [
+      "Sulla destra idrografica, lungo la direttrice di via Canevari",
+      "Sulla sinistra idrografica, lungo la direttrice di corso Sardegna",
+      "Sulla collina di Quezzi, lontano dal fondovalle"
+    ],
+    "correct": 0,
+    "explanation": "Via Bobbio è sul lato destro del Bisagno e collega Marassi a Staglieno. Corso Sardegna e corso De Stefanis appartengono alla direttrice sull’altro lato."
+  },
+  {
+    "id": "montaldo",
+    "question": "Quale strada risale dalla zona di via Bobbio verso piazza Manin, collegando Marassi e Castelletto?",
+    "answers": [
+      "Via Assarotti",
+      "Via Leonardo Montaldo",
+      "Via Caffaro"
+    ],
+    "correct": 1,
+    "explanation": "Via Leonardo Montaldo collega la zona di via Bobbio con piazza Manin, mettendo in comunicazione Marassi e Castelletto."
+  },
+  {
+    "id": "caffaro",
+    "question": "Quale via sale dalla zona di piazza del Portello verso Castelletto, anziché partire da piazza Corvetto?",
+    "answers": [
+      "Via Assarotti",
+      "Via Palestro",
+      "Via Caffaro"
+    ],
+    "correct": 2,
+    "explanation": "Via Caffaro risale dal Portello verso Castelletto; via Assarotti e via Palestro partono invece dalla zona di piazza Corvetto."
+  },
+  {
+    "id": "assarotti",
+    "question": "Quale strada collega direttamente piazza Corvetto a piazza Manin, risalendo verso Castelletto?",
+    "answers": [
+      "Via Assarotti",
+      "Via Caffaro",
+      "Via Leonardo Montaldo"
+    ],
+    "correct": 0,
+    "explanation": "Via Assarotti unisce piazza Corvetto a piazza Manin. Via Caffaro sale dal Portello; via Montaldo arriva a Manin dalla Val Bisagno."
+  },
+  {
+    "id": "posalunga",
+    "question": "In quale quartiere si trova via Posalunga, lungo la viabilità che offre uno sbocco verso Sturla?",
+    "answers": [
+      "San Fruttuoso",
+      "Borgoratti",
+      "Albaro"
+    ],
+    "correct": 1,
+    "explanation": "Via Posalunga si trova a Borgoratti. La viabilità di questo quartiere converge sulla strada lungo il collegamento verso Sturla."
+  },
+  {
+    "id": "de-stefanis",
+    "question": "Quale corso prosegue verso nord la direttrice di corso Sardegna, collegando Marassi con Staglieno sul lato sinistro del Bisagno?",
+    "answers": [
+      "Corso Montegrappa",
+      "Corso Gastaldi",
+      "Corso Alessandro De Stefanis"
+    ],
+    "correct": 2,
+    "explanation": "Corso Alessandro De Stefanis continua verso nord la direttrice di corso Sardegna e collega Marassi a Staglieno sulla sinistra idrografica del Bisagno."
+  },
+  {
+    "id": "circonvallazione",
+    "question": "Attraversando Castelletto lungo la circonvallazione a monte da ponente a levante, quale ordine dei corsi è corretto?",
+    "answers": [
+      "Corso Firenze → corso Paganini → corso Magenta → corso Solferino → corso Armellini",
+      "Corso Firenze → corso Magenta → corso Paganini → corso Armellini → corso Solferino",
+      "Corso Armellini → corso Solferino → corso Magenta → corso Paganini → corso Firenze"
+    ],
+    "correct": 0,
+    "explanation": "Da ponente a levante si incontrano Firenze, Paganini, Magenta, Solferino e Armellini; all’estremità orientale si raggiunge piazza Manin."
+  }
+]

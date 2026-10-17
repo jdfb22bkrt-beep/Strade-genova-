@@ -1,183 +1,65 @@
-const places = {
-  caruggi: { area: 'Centro storico', title: 'Dentro i caruggi', copy: 'Parti da Piazza De Ferrari e raggiungi Piazza San Lorenzo. Da qui puoi esplorare i vicoli del centro storico, passando per Piazza delle Erbe e proseguendo verso il Porto Antico.', tip: 'Le strade del centro possono avere pavimentazioni irregolari. Scegli scarpe comode e controlla sulla mappa il percorso più adatto a te.', query: 'Piazza San Lorenzo Genova' },
-  boccadasse: { area: 'Boccadasse', title: 'Dove le case incontrano il mare', copy: 'Boccadasse si trova all’estremità orientale di Corso Italia. La piccola spiaggia e le case affacciate sull’acqua invitano a fermarsi e osservare il borgo.', tip: 'Puoi abbinare la visita a una passeggiata sul lungomare di Corso Italia. Verifica meteo e trasporti prima di partire.', query: 'Boccadasse Genova' },
-  castelletto: { area: 'Castelletto', title: 'Genova vista dall’alto', copy: 'La Spianata di Castelletto offre una vista sui tetti del centro storico e sul porto. È un punto da cui leggere la forma della città, tra le colline e il mare.', tip: 'Il belvedere è raggiungibile anche con l’ascensore da Piazza Portello. Controlla orari e disponibilità sul sito ufficiale AMT prima della visita.', query: 'Spianata Castelletto Genova' }
-};
-const filterButtons = document.querySelectorAll('[data-filter]');
-filterButtons.forEach(button => button.addEventListener('click', () => {
-  filterButtons.forEach(item => { const active = item === button; item.classList.toggle('active', active); item.setAttribute('aria-pressed', String(active)); });
-  let visible = 0;
-  document.querySelectorAll('[data-category]').forEach(card => { card.hidden = button.dataset.filter !== 'tutti' && card.dataset.category !== button.dataset.filter; if (!card.hidden) visible++; });
-  document.querySelector('.filter-status').textContent = `${visible} ${visible === 1 ? 'luogo disponibile' : 'luoghi disponibili'}`;
-}));
-const dialog = document.querySelector('#place-dialog');
-document.querySelectorAll('[data-place]').forEach(button => button.addEventListener('click', () => {
-  const place = places[button.dataset.place];
-  document.querySelector('#dialog-area').textContent = place.area;
-  document.querySelector('#dialog-title').textContent = place.title;
-  document.querySelector('#dialog-copy').textContent = place.copy;
-  document.querySelector('#dialog-tip').textContent = place.tip;
-  document.querySelector('#map-link').href = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.query)}`;
-  dialog.showModal();
-}));
-document.querySelector('.close').addEventListener('click', () => dialog.close());
-dialog.addEventListener('click', event => { if (event.target === dialog) { const bounds = dialog.getBoundingClientRect(); if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close(); } });
-
-
-const quizQuestions = [
-  {
-    "question": "Percorrendo corso Europa da San Martino verso Nervi, quale successione di quartieri rispetta l’ordine da ponente a levante?",
-    "answers": [
-      "Sturla → Quinto al Mare → Quarto dei Mille → Nervi",
-      "Sturla → Quarto dei Mille → Quinto al Mare → Nervi",
-      "Quarto dei Mille → Sturla → Quinto al Mare → Nervi"
-    ],
-    "correct": 1,
-    "explanation": "Da San Martino, corso Europa prosegue verso Sturla, Quarto dei Mille, Quinto al Mare e Nervi."
-  },
-  {
-    "question": "Quale strada costituisce il raccordo tra la zona della stazione di Cornigliano e la direttrice verso Sestri Ponente?",
-    "answers": [
-      "Via Angelo Siffredi",
-      "Via Cornigliano",
-      "Via Sestri"
-    ],
-    "correct": 0,
-    "explanation": "Via Angelo Siffredi parte dal nodo della stazione di Cornigliano e prosegue verso Sestri Ponente. Via Sestri è invece nel centro di Sestri."
-  },
-  {
-    "question": "Quale strada, sulla destra idrografica del Bisagno, collega la zona di Borgo Incrociati e Brignole con Marassi?",
-    "answers": [
-      "Corso Sardegna",
-      "Corso Alessandro De Stefanis",
-      "Via Canevari"
-    ],
-    "correct": 2,
-    "explanation": "Via Canevari collega Borgo Incrociati e la zona di Brignole con Marassi, sulla sponda destra del Bisagno, guardando verso la foce."
-  },
-  {
-    "question": "Via Bobbio collega Marassi a Staglieno: su quale lato del Bisagno si sviluppa questa direttrice?",
-    "answers": [
-      "Sulla destra idrografica, lungo la direttrice di via Canevari",
-      "Sulla sinistra idrografica, lungo la direttrice di corso Sardegna",
-      "Sulla collina di Quezzi, lontano dal fondovalle"
-    ],
-    "correct": 0,
-    "explanation": "Via Bobbio è sul lato destro del Bisagno e collega Marassi a Staglieno. Corso Sardegna e corso De Stefanis appartengono alla direttrice sull’altro lato."
-  },
-  {
-    "question": "Quale strada risale dalla zona di via Bobbio verso piazza Manin, collegando Marassi e Castelletto?",
-    "answers": [
-      "Via Assarotti",
-      "Via Leonardo Montaldo",
-      "Via Caffaro"
-    ],
-    "correct": 1,
-    "explanation": "Via Leonardo Montaldo collega la zona di via Bobbio con piazza Manin, mettendo in comunicazione Marassi e Castelletto."
-  },
-  {
-    "question": "Quale via sale dalla zona di piazza del Portello verso Castelletto, anziché partire da piazza Corvetto?",
-    "answers": [
-      "Via Assarotti",
-      "Via Palestro",
-      "Via Caffaro"
-    ],
-    "correct": 2,
-    "explanation": "Via Caffaro risale dal Portello verso Castelletto; via Assarotti e via Palestro partono invece dalla zona di piazza Corvetto."
-  },
-  {
-    "question": "Quale strada collega direttamente piazza Corvetto a piazza Manin, risalendo verso Castelletto?",
-    "answers": [
-      "Via Assarotti",
-      "Via Caffaro",
-      "Via Leonardo Montaldo"
-    ],
-    "correct": 0,
-    "explanation": "Via Assarotti unisce piazza Corvetto a piazza Manin. Via Caffaro sale dal Portello; via Montaldo arriva a Manin dalla Val Bisagno."
-  },
-  {
-    "question": "In quale quartiere si trova via Posalunga, lungo la viabilità che offre uno sbocco verso Sturla?",
-    "answers": [
-      "San Fruttuoso",
-      "Borgoratti",
-      "Albaro"
-    ],
-    "correct": 1,
-    "explanation": "Via Posalunga si trova a Borgoratti. La viabilità di questo quartiere converge sulla strada lungo il collegamento verso Sturla."
-  },
-  {
-    "question": "Quale corso prosegue verso nord la direttrice di corso Sardegna, collegando Marassi con Staglieno sul lato sinistro del Bisagno?",
-    "answers": [
-      "Corso Montegrappa",
-      "Corso Gastaldi",
-      "Corso Alessandro De Stefanis"
-    ],
-    "correct": 2,
-    "explanation": "Corso Alessandro De Stefanis continua verso nord la direttrice di corso Sardegna e collega Marassi a Staglieno sulla sinistra idrografica del Bisagno."
-  },
-  {
-    "question": "Attraversando Castelletto lungo la circonvallazione a monte da ponente a levante, quale ordine dei corsi è corretto?",
-    "answers": [
-      "Corso Firenze → corso Paganini → corso Magenta → corso Solferino → corso Armellini",
-      "Corso Firenze → corso Magenta → corso Paganini → corso Armellini → corso Solferino",
-      "Corso Armellini → corso Solferino → corso Magenta → corso Paganini → corso Firenze"
-    ],
-    "correct": 0,
-    "explanation": "Da ponente a levante si incontrano Firenze, Paganini, Magenta, Solferino e Armellini; all’estremità orientale si raggiunge piazza Manin."
-  }
-];
-const quizForm = document.querySelector('#quiz-form');
-const quizContainer = document.querySelector('#quiz-questions');
-const quizResponses = Array(quizQuestions.length).fill(null);
-// Il risultato compare automaticamente dopo la decima risposta.
-quizForm.querySelector('[type="submit"]').hidden = true;
-quizForm.addEventListener('submit', event => event.preventDefault());
-function showQuizResult() {
-  const score = quizResponses.reduce((total, answer, index) => total + Number(answer === quizQuestions[index].correct), 0);
-  document.querySelector('#quiz-score').textContent = `Il tuo punteggio: ${score} / ${quizQuestions.length}`;
-  document.querySelector('#quiz-message').textContent = score === 10 ? 'Perfetto! Sai orientarti anche tra le direttrici meno evidenti di Genova.' : score >= 7 ? 'Ottimo risultato per un quiz difficile! Puoi riprovare per migliorare.' : 'Un quiz impegnativo: usa le spiegazioni per conoscere meglio i collegamenti e riprova!';
-  document.querySelector('#quiz-result').hidden = false;
+'use strict';
+const $ = selector => document.querySelector(selector);
+const key = 'genova-da-scoprire-v2';
+const oldKey = 'strade-genova-quiz-v1';
+const byId = new Map(QUESTIONS.map(q => [q.id, q]));
+const emptyTotals = () => ({completed:0,correct:0});
+const freshState = () => ({version:2,totals:emptyTotals(),levels:[emptyTotals(),emptyTotals(),emptyTotals()],legacy:emptyTotals(),history:{1:[],2:[],3:[]},round:null,migrated:false});
+let state = freshState();
+function validTotals(t) { return t && Number.isSafeInteger(t.completed) && Number.isSafeInteger(t.correct) && t.correct >= 0 && t.completed >= t.correct; }
+function validState(s) {
+  if (!s || s.version !== 2 || !validTotals(s.totals) || !validTotals(s.legacy) || !Array.isArray(s.levels) || s.levels.length !== 3 || !s.levels.every(validTotals) || typeof s.migrated !== 'boolean') return false;
+  if (['completed','correct'].some(k => s.totals[k] !== s.legacy[k] + s.levels.reduce((n,t) => n+t[k],0))) return false;
+  if (![1,2,3].every(l => Array.isArray(s.history?.[l]) && s.history[l].every(id => byId.get(id)?.level === l) && new Set(s.history[l]).size === s.history[l].length)) return false;
+  if (!s.round) return true;
+  const r=s.round;
+  if (![1,2,3].includes(r.level) || !Array.isArray(r.ids) || r.ids.length!==10 || new Set(r.ids).size!==10 || !r.ids.every(id=>byId.get(id)?.level===r.level) || !Number.isInteger(r.position) || r.position<0 || r.position>9 || !r.answers || typeof r.answers!=='object' || Array.isArray(r.answers)) return false;
+  const n=Object.keys(r.answers).length;
+  if (n<r.position || n>r.position+1 || !r.ids.every((id,i)=>i<n?Number.isInteger(r.answers[id])&&r.answers[id]>=0&&r.answers[id]<4:!Object.hasOwn(r.answers,id))) return false;
+  if (!r.choices || !r.ids.every(id=>Array.isArray(r.choices[id])&&r.choices[id].length===4&&new Set(r.choices[id]).size===4&&r.choices[id].every(i=>Number.isInteger(i)&&i>=0&&i<4))) return false;
+  const hits=r.ids.filter(id=>r.answers[id]===byId.get(id).correct).length;
+  return s.levels[r.level-1].completed>=n && s.levels[r.level-1].correct>=hits;
 }
-quizQuestions.forEach((item, index) => {
-  const fieldset = document.createElement('fieldset');
-  const legend = document.createElement('legend');
-  legend.textContent = `${index + 1}. ${item.question}`;
-  fieldset.append(legend);
-  const feedback = document.createElement('p');
-  feedback.className = 'quiz-feedback';
-  feedback.id = `quiz-feedback-${index}`;
-  feedback.setAttribute('aria-live', 'polite');
-  feedback.hidden = true;
-  item.answers.forEach((answer, choice) => {
-    const label = document.createElement('label');
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = `question-${index}`;
-    input.value = String(choice);
-    input.setAttribute('aria-describedby', feedback.id);
-    input.addEventListener('change', () => {
-      if (!input.checked || quizResponses[index] !== null) return;
-      quizResponses[index] = choice;
-      const correct = choice === item.correct;
-      feedback.textContent = `${correct ? 'Corretto!' : 'Risposta errata. La risposta corretta è: ' + item.answers[item.correct] + '.'} ${item.explanation}`;
-      feedback.hidden = false;
-      fieldset.classList.toggle('quiz-correct', correct);
-      // Impedisce di cambiare risposta dopo aver letto la spiegazione.
-      fieldset.querySelectorAll('input').forEach(option => { option.disabled = true; });
-      if (quizResponses.every(response => response !== null)) showQuizResult();
-    });
-    label.append(input, document.createTextNode(answer));
-    fieldset.append(label);
-  });
-  fieldset.append(feedback);
-  quizContainer.append(fieldset);
-});
-document.querySelector('#quiz-retry').addEventListener('click', () => {
-  quizForm.reset();
-  quizResponses.fill(null);
-  quizContainer.querySelectorAll('input').forEach(input => { input.disabled = false; });
-  quizContainer.querySelectorAll('.quiz-feedback').forEach(feedback => { feedback.hidden = true; feedback.textContent = ''; });
-  quizContainer.querySelectorAll('fieldset').forEach(fieldset => { fieldset.classList.remove('quiz-correct'); });
-  document.querySelector('#quiz-result').hidden = true;
-  quizContainer.querySelector('input').focus();
-});
+let storageBlocked=false;
+try {
+  const raw=localStorage.getItem(key);
+  if (raw) { const saved=JSON.parse(raw);if (!validState(saved)) throw Error('saved');state=saved; }
+  else { const legacyRaw=localStorage.getItem(oldKey);if (legacyRaw) {const old=JSON.parse(legacyRaw);if(old.version!==1||!validTotals(old))throw Error('legacy');state.legacy={completed:old.completed,correct:old.correct};state.totals={...state.legacy};state.migrated=true;} }
+} catch { $('#quiz-storage').textContent='Impossibile leggere i dati salvati. Puoi giocare in memoria; i dati precedenti non vengono sovrascritti. Esporta i progressi prima di chiudere.';storageBlocked=true; }
+function save() { if(storageBlocked)return;try {localStorage.setItem(key,JSON.stringify(state));}catch{$('#quiz-storage').textContent='Salvataggio non disponibile: esporta una copia dei progressi prima di chiudere.';} }
+function shuffle(items) {const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;}
+function sourceLink(source) {const a=document.createElement('a');a.href=SOURCES[source][1];a.textContent=SOURCES[source][0]+' ↗';a.target='_blank';a.rel='noopener noreferrer';a.className='text-link';return a;}
+function percent(t) {return t.completed?Math.round(t.correct/t.completed*100):0;}
+function renderStats() {
+  $('#stats-total').replaceChildren();
+  for(const [n,label] of [[state.totals.completed,'risposte date'],[state.totals.correct,'risposte corrette'],[percent(state.totals)+'%','successo complessivo']]){const card=document.createElement('div');const strong=document.createElement('strong');strong.textContent=n;const span=document.createElement('span');span.textContent=label;card.append(strong,span);$('#stats-total').append(card);}
+  $('#stats-levels').replaceChildren();state.levels.forEach((t,i)=>{const tr=document.createElement('tr');for(const value of [`${i+1} · ${LEVELS[i]}`,t.completed,t.correct,`${percent(t)}%`]){const td=document.createElement('td');td.textContent=value;tr.append(td);}$('#stats-levels').append(tr);});
+  $('#legacy-note').textContent=state.migrated?`Archivio precedente importato: ${state.legacy.correct} corrette su ${state.legacy.completed}. Questi risultati sono inclusi nei totali, separati dai nuovi livelli. Il vecchio salvataggio è conservato.`:'Nessun totale precedente trovato a questo indirizzo. Se usavi il file locale, apri qui index.html con lo stesso browser oppure importa una copia esportata.';
+}
+function startRound(level) {
+  // Prima le meno recenti; una domanda per municipio in ciascun passaggio.
+  const history=state.history[level];const pool=shuffle(QUESTIONS.filter(q=>q.level===level)).sort((a,b)=>history.indexOf(a.id)-history.indexOf(b.id));const ids=[];
+  while(ids.length<10){const areas=new Set();for(const q of pool){if(ids.length===10)break;if(!ids.includes(q.id)&&!areas.has(q.municipio)){ids.push(q.id);areas.add(q.municipio);}}}
+  state.history[level]=[...history.filter(id=>!ids.includes(id)),...ids];state.round={level,ids,position:0,answers:{},choices:Object.fromEntries(ids.map(id=>[id,shuffle([0,1,2,3])]))};save();renderQuiz(true);
+}
+function renderQuiz(focus=false) {
+  const r=state.round;document.querySelectorAll('[data-level]').forEach(b=>{const active=r?.level===Number(b.dataset.level);b.setAttribute('aria-pressed',String(active));b.classList.toggle('selected',active);});$('#quiz-play').hidden=!r;if(!r)return;
+  const q=byId.get(r.ids[r.position]),answered=Object.hasOwn(r.answers,q.id),done=answered&&r.position===9;const count=Object.keys(r.answers).length,score=r.ids.filter(id=>r.answers[id]===byId.get(id).correct).length;
+  $('#quiz-progress').textContent=`Livello ${r.level} · ${LEVELS[r.level-1]} · Domanda ${r.position+1} di 10`;$('#quiz-stats').textContent=`Punteggio del giro: ${score} / 10 · Risposte date: ${count}`;$('#round-progress').value=count;
+  const fieldset=document.createElement('fieldset'),legend=document.createElement('legend');legend.tabIndex=-1;legend.textContent=q.question;fieldset.append(legend);
+  r.choices[q.id].forEach(choice=>{const label=document.createElement('label'),input=document.createElement('input');input.type='radio';input.name='quiz-answer';input.value=choice;input.checked=answered&&r.answers[q.id]===choice;input.disabled=answered;input.setAttribute('aria-describedby','quiz-feedback');if(answered&&choice===q.correct)label.classList.add('answer-correct');if(answered&&choice===r.answers[q.id]&&choice!==q.correct)label.classList.add('answer-wrong');input.addEventListener('change',()=>{if(Object.hasOwn(r.answers,q.id))return;r.answers[q.id]=choice;state.totals.completed++;state.levels[r.level-1].completed++;if(choice===q.correct){state.totals.correct++;state.levels[r.level-1].correct++;}save();renderQuiz();renderStats();(r.position===9?$('#quiz-final-score'):$('#quiz-next')).focus();});label.append(input,document.createTextNode(q.answers[choice]));fieldset.append(label);});
+  const feedback=document.createElement('div');feedback.id='quiz-feedback';feedback.className='quiz-feedback';feedback.setAttribute('aria-live','polite');feedback.hidden=!answered;if(answered){const p=document.createElement('p');p.textContent=`${r.answers[q.id]===q.correct?'Corretto!':'Questa volta no.'} La risposta corretta è: ${q.answers[q.correct]}. ${q.explanation}`;feedback.append(p,sourceLink(q.source));}fieldset.append(feedback);$('#quiz-questions').replaceChildren(fieldset);$('#quiz-next').hidden=!answered||done;$('#quiz-result').hidden=!done;$('#quiz-final-score').textContent=`Punteggio del giro: ${score} / 10 (${score*10}%)`;$('#quiz-final-total').textContent=`Totale complessivo: ${state.totals.correct} corrette su ${state.totals.completed} (${percent(state.totals)}%). Il prossimo giro riparte da zero; i tuoi totali restano.`;if(focus)legend.focus();
+}
+LEVELS.forEach((name,i)=>{const b=document.createElement('button');b.type='button';b.dataset.level=i+1;b.className='level-card';b.setAttribute('aria-pressed','false');const n=document.createElement('span');n.className='eyebrow';n.textContent=`LIVELLO ${i+1} · ${QUESTIONS.filter(q=>q.level===i+1).length} DOMANDE`;const title=document.createElement('strong');title.textContent=name;const description=document.createElement('span');description.textContent=['Storie, monumenti e curiosità da riscoprire.','Quartieri, geografia e collegamenti della città.','Vie, dettagli storici e percorsi meno evidenti.'][i];b.append(n,title,description);b.addEventListener('click',()=>{if(state.round&&Object.keys(state.round.answers).length<10&&!confirm('Iniziare un nuovo giro? I punti già ottenuti restano nelle statistiche complessive.'))return;startRound(i+1);});$('#level-choices').append(b);});
+$('#quiz-form').addEventListener('submit',e=>e.preventDefault());$('#quiz-next').addEventListener('click',()=>{const r=state.round;if(!r||!Object.hasOwn(r.answers,r.ids[r.position])||r.position>=9)return;r.position++;save();renderQuiz(true);});$('#quiz-retry').addEventListener('click',()=>startRound(state.round.level));
+let category='tutti';const dialog=$('#place-dialog');
+MUNICIPIOS.forEach((name,i)=>{const option=document.createElement('option');option.value=i+1;option.textContent=`${i+1} · ${name}`;$('#municipio-filter').append(option);});
+function photoContent(place){if(place.photo){const img=document.createElement('img');img.src=place.photo;img.alt=`${place.name}: case e spiaggia sul mare`;img.loading='lazy';img.width=1280;img.height=577;return img;}const div=document.createElement('div');div.className='photo-placeholder';const icon=document.createElement('span');icon.textContent='↗';icon.setAttribute('aria-hidden','true');const text=document.createElement('span');text.textContent='Uno sguardo da aggiungere';const small=document.createElement('small');small.textContent='Fotografia autentica in preparazione';div.append(icon,text,small);return div;}
+function openPlace(place){$('#dialog-area').textContent=`${place.area} · Municipio ${place.municipio} ${MUNICIPIOS[place.municipio-1]}`;$('#dialog-title').textContent=place.name;$('#dialog-copy').textContent=place.history;$('#dialog-tip').textContent=place.curiosity;$('#dialog-image').replaceChildren(photoContent(place));if(place.photo){const credit=document.createElement('p');credit.className='muted';credit.append('Foto: Alexdechi · ',Object.assign(document.createElement('a'),{href:'https://commons.wikimedia.org/wiki/File:Boccadasse.jpg',textContent:'Wikimedia Commons'}),' · ',Object.assign(document.createElement('a'),{href:'https://creativecommons.org/licenses/by-sa/4.0/',textContent:'CC BY-SA 4.0'}),' · ridimensionata e convertita in WebP');$('#dialog-image').append(credit);}$('#dialog-source').replaceChildren(sourceLink(place.source));$('#map-link').href=`https://www.openstreetmap.org/search?query=${encodeURIComponent(place.name+' Genova')}`;dialog.showModal();}
+function renderPlaces(){const query=$('#place-search').value.trim().toLocaleLowerCase('it');const area=$('#municipio-filter').value;const list=PLACES.filter(p=>(category==='tutti'||p.category===category)&&(area==='all'||p.municipio===Number(area))&&`${p.name} ${p.area}`.toLocaleLowerCase('it').includes(query));$('#percorsi').replaceChildren();list.forEach(p=>{const card=document.createElement('article');card.className='card';card.dataset.category=p.category;card.append(photoContent(p));const info=document.createElement('div');info.className='card-info';const eyebrow=document.createElement('p');eyebrow.className='eyebrow';eyebrow.textContent=`${p.area} · Municipio ${p.municipio}`;const title=document.createElement('h3');title.textContent=p.name;const copy=document.createElement('p');copy.textContent=p.history;const b=document.createElement('button');b.className='detail';b.textContent='Scopri il luogo ↗';b.setAttribute('aria-label',`Scopri ${p.name}`);b.addEventListener('click',()=>openPlace(p));info.append(eyebrow,title,copy,b);card.append(info);$('#percorsi').append(card);});$('.filter-status').textContent=list.length?`${list.length} luoghi disponibili`:'Nessun luogo trovato. Prova un altro nome o cambia i filtri.';}
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{category=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>{x.classList.toggle('active',x===b);x.setAttribute('aria-pressed',String(x===b));});renderPlaces();}));$('#place-search').addEventListener('input',renderPlaces);$('#municipio-filter').addEventListener('change',renderPlaces);$('.close').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target!==dialog)return;const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();});
+$('#export-stats').addEventListener('click',()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='genova-da-scoprire-progressi.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000);$('#data-status').textContent='Copia esportata. Conserva il file per recuperare statistiche e partita.';});
+$('#import-stats').addEventListener('change',async e=>{const file=e.target.files[0];if(!file)return;try{if(file.size>1000000)throw Error();const imported=JSON.parse(await file.text());if(!validState(imported))throw Error();if(!confirm('Sostituire i progressi correnti con questa copia? Esporta prima i dati correnti se vuoi conservarli.'))return;state=imported;storageBlocked=false;save();renderQuiz();renderStats();$('#data-status').textContent='Progressi importati.';}catch{$('#data-status').textContent='File non valido: nessun progresso modificato.';}finally{e.target.value='';}});
+$('#archive-summary').textContent=`9 municipi · ${PLACES.length} luoghi · ${QUESTIONS.length} domande con fonte`;$('#editorial-status').textContent=`Prima edizione: ${QUESTIONS.length} domande (${LEVELS.map((_,i)=>QUESTIONS.filter(q=>q.level===i+1).length).join(' / ')} nei tre livelli) e ${PLACES.length} luoghi in tutti i nove municipi. L’obiettivo è arrivare a 300 domande verificate, ampliando soprattutto strade secondarie e quartieri ancora poco rappresentati. La copertura non è ancora completa né uniforme.`;
+renderPlaces();renderQuiz();renderStats();
+if(location.protocol!=='file:'&&'serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{$('#quiz-storage').textContent+=' Cache offline non disponibile: conserva la cartella locale per giocare senza Internet.';});

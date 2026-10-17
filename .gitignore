@@ -1,0 +1,14 @@
+*
+!.gitignore
+!.nojekyll
+!README.md
+!index.html
+!style.css
+!data.js
+!app.js
+!sw.js
+!informazioni.html
+!assets/
+!assets/boccadasse.webp
+!archive/
+!archive/original-questions.json
